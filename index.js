@@ -19,19 +19,18 @@ async function run(){
         core.info(`issue_number: ${context.issue.number}`);
         core.info(`repo: ${context.repo}`);
 
-  /*       if (comment !== '') {
+         if (comment !== '') {
             
           await client.rest.pulls.createReviewComment({
             ...context.repo,
             pull_number: context.issue.number,
             body: comment,
           });
-        } */
+        } 
 
         await client.rest.pulls.update({
             ...context.repo,
             pull_number: context.issue.number,
-            body: comment,
             state: "closed"
         });
 
