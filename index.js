@@ -21,9 +21,9 @@ async function run(){
 
         if (comment !== '') {
             
-          await client.rest.pulls.createReviewComment({
+          await client.rest.pulls.updateReviewComment({
             ...context.repo,
-            issue_number: context.issue.number,
+            comment_id: context.issue.number,
             body: comment,
           });
         }
