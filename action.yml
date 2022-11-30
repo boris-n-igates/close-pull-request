@@ -1,7 +1,7 @@
 name: 'Close Pull Request'
 description: 'Close pull request'
 inputs:
-  token:
+  github_token:
     description: "Token to authenticate on behalf of GitHub Actions"
     default: ${{ github.token }}
 
