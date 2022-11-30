@@ -29,12 +29,14 @@ async function run(){
             pull_number: context.issue.number,
             state: "closed"
         });
+
+        core.info(`Pull request ${context.issue.number} was closed`);
     
     } catch (error) {
       core.setFailed(error.message);
     }
 
-    core.info(`Pull request ${context.issue.number} was closed`);
+    
 }
 
 run();
