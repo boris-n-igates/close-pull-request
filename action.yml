@@ -3,9 +3,7 @@ description: 'Close pull request'
 inputs:
   token:
     description: "Token to authenticate on behalf of GitHub Actions"
-    type: string
-    required: true
-    default: ''
+    default: ${{ github.token }}
 
   comment:
     description: "Comment describes pull request reject reason "
