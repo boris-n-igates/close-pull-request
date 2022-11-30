@@ -17,10 +17,11 @@ async function run(){
 
         
         if (comment !== '') {
-          await client.issues.createComment({
+            
+          await client.rest.pulls.createReviewComment({
             ...context.repo,
             issue_number: context.issue.number,
-            comment,
+            body: comment,
           });
         }
 
