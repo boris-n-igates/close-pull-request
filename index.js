@@ -10,12 +10,15 @@ async function run(){
         const context = github.context;
     
         if(context.eventName != 'pull_request'){
-            _error('Only works with pull request events');
+            core.error('Only works with pull request events');
         }
     
         const client = github.getOctokit(token);
 
-        
+        core.info(`comment: ${comment}`);
+        core.info(`issue_number: ${context.issue.number}`);
+        core.info(`repo: ${context.repo}`);
+
         if (comment !== '') {
             
           await client.rest.pulls.createReviewComment({
@@ -35,6 +38,7 @@ async function run(){
     
     } catch (error) {
       core.setFailed(error.message);
+      core.setFailed(error);
     }
 
     
