@@ -1,8 +1,6 @@
 
-import * as core from '@actions/core';
-import * as github from '@actions/github';
-import { GitHub } from '@actions/github/lib/utils';
- 
+const core = require('@actions/core');
+const github = require('@actions/github');
 
 async function run(){
 
