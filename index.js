@@ -5,7 +5,7 @@ const github = require('@actions/github');
 async function run(){
 
     try {
-        const token = core.getInput('github_token',{required: true});
+        const token = core.getInput('github_token');
         const comment = core.getInput('comment') || '';
         const context = github.context;
     
