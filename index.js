@@ -31,7 +31,7 @@ async function run(){
         });
     
     } catch (error) {
-      setFailed(error.message);
+      core.setFailed(error.message);
     }
 
     core.info(`Pull request ${context.issue.number} was closed`);
